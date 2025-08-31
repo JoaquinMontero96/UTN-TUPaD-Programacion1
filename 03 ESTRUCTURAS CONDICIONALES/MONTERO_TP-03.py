@@ -4,7 +4,6 @@ edad_usuario = int(input("Ingrese su edad: "))
 
 if edad_usuario >= 18:
     print("Es mayor de edad.")
-"""
 
 #Ejercicio 2
 nota_usuario = int(input("Ingrese su nota: "))
@@ -13,3 +12,11 @@ if nota_usuario >= 6:
     print("Aprobado")
 else:
     print("Desaprobado")
+"""
+#Ejercicio 3
+numero_usuario = int(input("Ingrese un numero par: "))
+
+if numero_usuario % 2 == 0:
+    print("Ha ingresado un número par")
+else:
+    print("Por favor ingrese un número par")
