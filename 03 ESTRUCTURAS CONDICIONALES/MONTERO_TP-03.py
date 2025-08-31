@@ -1,5 +1,4 @@
 #Ejercicio 1
-"""
 edad_usuario = int(input("Ingrese su edad: "))
 
 if edad_usuario >= 18:
@@ -56,8 +55,6 @@ elif media < mediana < moda:
 elif media == mediana and mediana == moda:
     print("No hay sesgo")
 
-print(media, moda, mediana)
-
 #Ejercicio 7
 palabra_ingresada = input("Ingrese una frase o palabra: ")
 
@@ -92,7 +89,7 @@ elif 6 <= magnitud_terremoto < 7:
     print("La magnitud es muy fuerte")
 else:
     print("La magnitud es extrema")
-"""
+
 #Ejercicio 10
 hemisferio_usuario = input("Ingrese el hemisferio en que se encuentra (N/S): ").upper()
 mes_usuario = int(input("Ingrese el mes en el que se encuentra (1 al 12): "))
