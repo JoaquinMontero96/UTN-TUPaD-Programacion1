@@ -4,7 +4,7 @@ import math
 print("Hola mundo!")
 
 #Ejercicio 2
-NAME = input("¿Cuál es tu nombre? ")
+name = input("¿Cuál es tu nombre? ")
 print(f"Hola {name}!")
 
 #Ejercicio 3
