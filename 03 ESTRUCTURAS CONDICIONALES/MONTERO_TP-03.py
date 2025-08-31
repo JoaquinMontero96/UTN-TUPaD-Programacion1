@@ -40,7 +40,7 @@ if len(password) >= 8 and len(password) <= 14:
     print("Ha ingresado una contraseña correcta")
 else:
     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
-"""
+
 #Ejercicio 6
 import random
 from statistics import mode, median, mean
@@ -57,3 +57,11 @@ elif media == mediana and mediana == moda:
     print("No hay sesgo")
 
 print(media, moda, mediana)
+"""
+#Ejercicio 7
+palabra_ingresada = input("Ingrese una frase o palabra: ")
+
+if palabra_ingresada[-1] in "aeiou":
+    print(f"{palabra_ingresada}!")
+else:
+    print(palabra_ingresada)
