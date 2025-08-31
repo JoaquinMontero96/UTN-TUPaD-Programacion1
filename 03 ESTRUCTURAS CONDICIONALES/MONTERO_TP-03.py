@@ -32,7 +32,7 @@ elif edad_usuario >= 18 and edad_usuario < 30:
     print("Usted es adulto/a joven")
 else:
     print("Usted es adulto/a")
-"""
+
 #Ejercicio 5
 password = input("Ingrese una contraseña: ")
 
@@ -40,3 +40,20 @@ if len(password) >= 8 and len(password) <= 14:
     print("Ha ingresado una contraseña correcta")
 else:
     print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
+"""
+#Ejercicio 6
+import random
+from statistics import mode, median, mean
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+media = mean(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+moda = mode(numeros_aleatorios)
+
+if media > mediana > moda:
+    print("Hay sesgo positivo")
+elif media < mediana < moda:
+    print("Hay sesgo negativo")
+elif media == mediana and mediana == moda:
+    print("No hay sesgo")
+
+print(media, moda, mediana)
