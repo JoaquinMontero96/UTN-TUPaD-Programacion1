@@ -76,7 +76,7 @@ elif opcion_nombre == 2:
     print(nombre_usuario.lower())
 elif opcion_nombre == 3:
     print(nombre_usuario.title())
-"""
+
 #Ejercicio 9
 magnitud_terremoto = float(input("Ingrese la magnitud de un terremoto: "))
 
@@ -92,3 +92,19 @@ elif 6 <= magnitud_terremoto < 7:
     print("La magnitud es muy fuerte")
 else:
     print("La magnitud es extrema")
+"""
+#Ejercicio 10
+hemisferio_usuario = input("Ingrese el hemisferio en que se encuentra (N/S): ").upper()
+mes_usuario = int(input("Ingrese el mes en el que se encuentra (1 al 12): "))
+dia_usuario = int(input("Ingrese el día en el que se encuentra (1 al 31): "))
+
+if 1 <= mes_usuario < 3 or (mes_usuario == 12 and dia_usuario >= 21) or (mes_usuario == 3 and dia_usuario <= 20):
+    estacion = "Verano" if hemisferio_usuario == "S" else "Invierno"
+elif 3 < mes_usuario < 6 or (mes_usuario == 3 and dia_usuario >= 21) or (mes_usuario == 6 and dia_usuario <= 20):
+    estacion = "Otoño" if hemisferio_usuario == "S" else "Primavera"
+elif 6 < mes_usuario < 9 or (mes_usuario == 6 and dia_usuario >= 21) or (mes_usuario == 9 and dia_usuario <= 20):
+    estacion = "Invierno" if hemisferio_usuario == "S" else "Verano"
+elif 9 < mes_usuario < 12 or (mes_usuario == 9 and dia_usuario >= 21) or (mes_usuario == 12 and dia_usuario <= 20):
+    estacion = "Primavera" if hemisferio_usuario == "S" else "Otoño"
+
+print(f"Usted está en {estacion}")
