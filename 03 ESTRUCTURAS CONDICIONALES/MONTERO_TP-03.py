@@ -20,7 +20,7 @@ if numero_usuario % 2 == 0:
     print("Ha ingresado un número par")
 else:
     print("Por favor ingrese un número par")
-"""
+
 #Ejercicio 4
 edad_usuario = int(input("Ingrese su edad: "))
 
@@ -32,3 +32,11 @@ elif edad_usuario >= 18 and edad_usuario < 30:
     print("Usted es adulto/a joven")
 else:
     print("Usted es adulto/a")
+"""
+#Ejercicio 5
+password = input("Ingrese una contraseña: ")
+
+if len(password) >= 8 and len(password) <= 14:
+    print("Ha ingresado una contraseña correcta")
+else:
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
