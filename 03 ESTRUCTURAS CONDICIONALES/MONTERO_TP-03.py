@@ -65,7 +65,7 @@ if palabra_ingresada[-1] in "aeiou":
     print(f"{palabra_ingresada}!")
 else:
     print(palabra_ingresada)
-"""
+
 #Ejercicio 8
 nombre_usuario = input("Ingrese su nombre: ")
 opcion_nombre = int(input("Ingrese la opcion deseada (1, 2 o 3):"))
@@ -76,3 +76,19 @@ elif opcion_nombre == 2:
     print(nombre_usuario.lower())
 elif opcion_nombre == 3:
     print(nombre_usuario.title())
+"""
+#Ejercicio 9
+magnitud_terremoto = float(input("Ingrese la magnitud de un terremoto: "))
+
+if magnitud_terremoto < 3:
+    print("La magnitud es muy leve")
+elif 3 <= magnitud_terremoto < 4:
+    print("La magnitud es leve")
+elif 4 <= magnitud_terremoto < 5:
+    print("La magnitud es moderada")
+elif 5 <= magnitud_terremoto < 6:
+    print("La magnitud es fuerte")
+elif 6 <= magnitud_terremoto < 7:
+    print("La magnitud es muy fuerte")
+else:
+    print("La magnitud es extrema")
