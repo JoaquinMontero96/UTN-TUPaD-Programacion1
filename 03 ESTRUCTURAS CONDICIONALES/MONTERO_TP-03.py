@@ -57,7 +57,7 @@ elif media == mediana and mediana == moda:
     print("No hay sesgo")
 
 print(media, moda, mediana)
-"""
+
 #Ejercicio 7
 palabra_ingresada = input("Ingrese una frase o palabra: ")
 
@@ -65,3 +65,14 @@ if palabra_ingresada[-1] in "aeiou":
     print(f"{palabra_ingresada}!")
 else:
     print(palabra_ingresada)
+"""
+#Ejercicio 8
+nombre_usuario = input("Ingrese su nombre: ")
+opcion_nombre = int(input("Ingrese la opcion deseada (1, 2 o 3):"))
+
+if opcion_nombre == 1:
+    print(nombre_usuario.upper())
+elif opcion_nombre == 2:
+    print(nombre_usuario.lower())
+elif opcion_nombre == 3:
+    print(nombre_usuario.title())
