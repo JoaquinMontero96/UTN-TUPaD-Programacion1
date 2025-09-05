@@ -87,12 +87,23 @@
 # print(f"En los {cant_num} números que ingresaste hay {pares} pares y {impares} impares. A su vez {positivos} positivos y {negativos} negativos.")
 
 # Ejercicio 9
-import statistics
-cant_num = 100
-numeros = []
+# import statistics
+# cant_num = 100
+# numeros = []
 
-for cont in range(1, cant_num+1):
-    num_usuario = int(input(f"Ingrese número {cont}: "))
-    numeros.append(num_usuario)
+# for cont in range(1, cant_num+1):
+#     num_usuario = int(input(f"Ingrese número {cont}: "))
+#     numeros.append(num_usuario)
 
-print(f"La media de los números ingresados es {statistics.mean(numeros)}")
+# print(f"La media de los números ingresados es {statistics.mean(numeros)}")
+
+# Ejercicio 10
+numero_usuario = str(input("Ingrese un número entero: "))
+
+
+if int(numero_usuario) >= 0:
+    numero_invertido = numero_usuario[::-1]
+else:
+    numero_invertido = "-"+numero_usuario[:0:-1]
+
+print(f"El número invertido de {int(numero_usuario)} es {int(numero_invertido)}")
