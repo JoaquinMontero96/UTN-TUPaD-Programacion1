@@ -56,10 +56,32 @@
 #         print(cont)
 
 # Ejercicio 7
-numero_usuario = int(input("Ingrese un número entero: "))
-suma = 0
+# numero_usuario = int(input("Ingrese un número entero: "))
+# suma = 0
 
-for cont in range(numero_usuario+1):
-    suma += cont
+# for cont in range(numero_usuario+1):
+#     suma += cont
 
-print(f"La sumatoria de todos los números enteros comprendidos entre 0 y {numero_usuario} es {suma}")
+# print(f"La sumatoria de todos los números enteros comprendidos entre 0 y {numero_usuario} es {suma}")
+
+# Ejercicio 8
+pares = 0
+impares = 0
+positivos = 0
+negativos = 0
+cant_num = 100
+
+for cont in range(1, cant_num+1):
+    num_usuario = int(input(f"Ingrese número {cont}: "))
+
+    if num_usuario % 2 == 0:
+        pares += 1
+    else:
+        impares += 1
+
+    if num_usuario > 0:
+        positivos += 1
+    elif num_usuario < 0:
+        negativos += 1
+
+print(f"En los {cant_num} números que ingresaste hay {pares} pares y {impares} impares. A su vez {positivos} positivos y {negativos} negativos.")
