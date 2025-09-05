@@ -51,6 +51,15 @@
 # print(f"Genial! Adivinaste el número, te costó {intentos} intentos")
 
 # Ejercicio 6
-for cont in range(100, 0, -1):
-    if cont % 2 == 0:
-        print(cont)
+# for cont in range(100, 0, -1):
+#     if cont % 2 == 0:
+#         print(cont)
+
+# Ejercicio 7
+numero_usuario = int(input("Ingrese un número entero: "))
+suma = 0
+
+for cont in range(numero_usuario+1):
+    suma += cont
+
+print(f"La sumatoria de todos los números enteros comprendidos entre 0 y {numero_usuario} es {suma}")
