@@ -34,18 +34,23 @@
 # print(f"La sumatoria de los números ingresados es {suma}")
 
 # Ejercicio 5
-import random
+# import random
 
-numero_aleatorio = random.randint(0, 9)
-intentos = 0
+# numero_aleatorio = random.randint(0, 9)
+# intentos = 0
 
-while True:
-    print("Adivine el número! Ingrese un número entre 0 y 9")
-    numero_usuario = int(input())
-    intentos += 1
-    if numero_usuario != numero_aleatorio:
-        print("Número equivocado!")
-    elif numero_usuario == numero_aleatorio:
-        break
+# while True:
+#     print("Adivine el número! Ingrese un número entre 0 y 9")
+#     numero_usuario = int(input())
+#     intentos += 1
+#     if numero_usuario == numero_aleatorio:
+#         break
+#     else:
+#         print("Número equivocado!")
 
-print(f"Genial! Adivinaste el número, te costó {intentos} intentos")
+# print(f"Genial! Adivinaste el número, te costó {intentos} intentos")
+
+# Ejercicio 6
+for cont in range(100, 0, -1):
+    if cont % 2 == 0:
+        print(cont)
