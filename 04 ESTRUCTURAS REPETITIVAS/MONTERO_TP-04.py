@@ -23,12 +23,29 @@
 # print(f"La suma de todos los números enteros comprendidos entre {num1} y {num2} (sin incluirlos) es {suma}")
 
 # Ejercicio 4
-suma = 0
+# suma = 0
+
+# while True:
+#     num_usuario = int(input("Ingrese un número entero para acumularlo (ingrese 0 para finalizar): "))
+#     suma += num_usuario
+#     if num_usuario == 0:
+#         break
+
+# print(f"La sumatoria de los números ingresados es {suma}")
+
+# Ejercicio 5
+import random
+
+numero_aleatorio = random.randint(0, 9)
+intentos = 0
 
 while True:
-    num_usuario = int(input("Ingrese un número entero para acumularlo (ingrese 0 para finalizar): "))
-    suma += num_usuario
-    if num_usuario == 0:
+    print("Adivine el número! Ingrese un número entre 0 y 9")
+    numero_usuario = int(input())
+    intentos += 1
+    if numero_usuario != numero_aleatorio:
+        print("Número equivocado!")
+    elif numero_usuario == numero_aleatorio:
         break
 
-print(f"La sumatoria de los números ingresados es {suma}")
+print(f"Genial! Adivinaste el número, te costó {intentos} intentos")
