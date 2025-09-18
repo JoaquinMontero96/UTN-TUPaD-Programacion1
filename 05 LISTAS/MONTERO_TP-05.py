@@ -50,21 +50,36 @@
 # else:
 #     print("Producto no encontrado")
 
-# Ejercicio 3
-import random
+# # Ejercicio 3
+# import random
 
-#Definimos las variables
-cant_numeros = 15
-lista_pares = []
-lista_impares = []
+# #Definimos las variables
+# cant_numeros = 15
+# lista_pares = []
+# lista_impares = []
 
-#Iteramos x veces y generamos x números aleatorios, luego comprobamos si son pares o impares y lo agregamos a la lista correspondiente
-for i in range(cant_numeros):
-    numero_aleatorio = random.randint(1, 100)
-    if numero_aleatorio % 2 == 0:
-        lista_pares.append(numero_aleatorio)
-    else:
-        lista_impares.append(numero_aleatorio)
+# #Iteramos x veces y generamos x números aleatorios, luego comprobamos si son pares o impares y lo agregamos a la lista correspondiente
+# for i in range(cant_numeros):
+#     numero_aleatorio = random.randint(1, 100)
+#     if numero_aleatorio % 2 == 0:
+#         lista_pares.append(numero_aleatorio)
+#     else:
+#         lista_impares.append(numero_aleatorio)
 
-#Mostramos la cantidad de elementos de cada lista
-print(f"Hay {len(lista_pares)} números pares y {len(lista_impares)} números impares")
+# #Mostramos la cantidad de elementos de cada lista
+# print(f"Hay {len(lista_pares)} números pares y {len(lista_impares)} números impares")
+
+# Ejercicio 4
+
+#Inicializamos la variables
+datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+datos_unicos = []
+
+#Recorremos la lista y agregamos cada elemento que no esté en la nueva lista
+for dato in datos:
+    if not dato in datos_unicos:
+        datos_unicos.append(dato)
+
+#Mostramos ambas listas para corroborar el funcionamiento del algoritmo
+print(datos)
+print(datos_unicos)
