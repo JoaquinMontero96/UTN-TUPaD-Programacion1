@@ -185,51 +185,87 @@
 #     promedios_materias[i] = promedios_materias[i] / cantidad_alumnos # Calculamos el promedio de cada materia
 #     print(f"El promedio de la materia {i + 1} es {promedios_materias[i]}") # y lo mostramos por pantalla
 
-# Ejercicio 9
+# # Ejercicio 9
 
-# Definimos las variables
-tablero = [[" ", 1, 2, 3], ["1", "-", "-", "-"], ["2", "-", "-","-"], ["3", "-", "-","-"]]
+# # Definimos las variables
+# tablero = [[" ", 1, 2, 3], ["1", "-", "-", "-"], ["2", "-", "-","-"], ["3", "-", "-","-"]]
 
-# Mostramos el tablero vacío
-for fila in tablero:
-    print(*fila)
+# # Mostramos el tablero vacío
+# for fila in tablero:
+#     print(*fila)
 
-# Iteramos 9 veces (cantidad de turnos posibles)
-for i in range(9):
-    # Definimos el ícono del jugador de turno
-    if i % 2 == 0:
-        team = "X"
-    else:
-        team = "O"
+# # Iteramos 9 veces (cantidad de turnos posibles)
+# for i in range(9):
+#     # Definimos el ícono del jugador de turno
+#     if i % 2 == 0:
+#         team = "X"
+#     else:
+#         team = "O"
 
-    # Anunciamos de quién es turno
-    print(f"Turno de {team}")
+#     # Anunciamos de quién es turno
+#     print(f"Turno de {team}")
 
-    # Solicitamos al usuario ingresar número de fila y columna, verificamos que sea dentro del rango permitido
-    while True:
-        while True:
-            fila_usuario = int(input("Ingrese n° de fila (1 a 3): "))
-            if fila_usuario < 1 or fila_usuario > 3:
-                print("Por favor ingrese del 1 al 3")
-            else:
-                break
-        while True:
-            columna_usuario = int(input("Ingrese n° de columna (1 a 3): "))
-            if columna_usuario < 1 or columna_usuario > 3:
-                print("Por favor ingrese del 1 al 3")
-            else:
-                break
+#     # Solicitamos al usuario ingresar número de fila y columna, verificamos que sea dentro del rango permitido
+#     while True:
+#         while True:
+#             fila_usuario = int(input("Ingrese n° de fila (1 a 3): "))
+#             if fila_usuario < 1 or fila_usuario > 3:
+#                 print("Por favor ingrese del 1 al 3")
+#             else:
+#                 break
+#         while True:
+#             columna_usuario = int(input("Ingrese n° de columna (1 a 3): "))
+#             if columna_usuario < 1 or columna_usuario > 3:
+#                 print("Por favor ingrese del 1 al 3")
+#             else:
+#                 break
 
-        # Verificamos que el casillero no esté ocupado
-        if tablero[fila_usuario][columna_usuario] != "-":
-            print("Casillero ya ocupado")
-        else:
-            tablero[fila_usuario][columna_usuario] = team # Asignamos el lugar ingresado
-            break
+#         # Verificamos que el casillero no esté ocupado
+#         if tablero[fila_usuario][columna_usuario] != "-":
+#             print("Casillero ya ocupado")
+#         else:
+#             tablero[fila_usuario][columna_usuario] = team # Asignamos el lugar ingresado
+#             break
 
-    # Mostramos por pantalla como queda el tablero
-    for fila in tablero:
-        print(*fila)
+#     # Mostramos por pantalla como queda el tablero
+#     for fila in tablero:
+#         print(*fila)
 
-# Finalizamos la partida
-print("Partida finalizada")
+# # Finalizamos la partida
+# print("Partida finalizada")
+
+# Ejercicio 10
+
+ventas_diarias = [
+    [10000, 15000, 12000, 13000, 9000, 8000, 12000],
+    [15000, 3000, 4000, 3300, 4700, 6200, 2100],
+    [2800, 5000, 4000, 3800, 7440, 6500, 3100],
+    [9000, 16000, 21000, 30000, 40000, 25000, 12000]]
+
+cantidad_productos = len(ventas_diarias)
+importe_mayor_ventas = 0
+dia_mayor_ventas = 0
+producto_mas_vendido = [0, 0]
+totales_diarios = [["Lunes", 0], ["Martes", 0], ["Miercoles", 0], ["Jueves", 0], ["Viernes", 0], ["Sabado", 0], ["Domingo", 0]]
+
+for producto in range(cantidad_productos):
+    total_vendido_producto = 0
+
+    for dia in range(7):
+        total_vendido_producto += ventas_diarias[producto][dia]
+        totales_diarios[dia][1] = totales_diarios[dia][1] + ventas_diarias[producto][dia]
+
+    print(f"Total vendido del producto {producto + 1}: {total_vendido_producto}")
+
+    if total_vendido_producto > producto_mas_vendido[0]:
+        producto_mas_vendido[0] = total_vendido_producto
+        producto_mas_vendido[1] = producto + 1
+
+print(f"El producto mas vendido fue el {producto_mas_vendido[1]} con $ {producto_mas_vendido[0]}")
+
+for dia in range(7):
+    if totales_diarios[dia][1] > importe_mayor_ventas:
+        importe_mayor_ventas = totales_diarios[dia][1]
+        dia_mayor_ventas = dia
+
+print(f"El día de mayor ventas fue el {totales_diarios[dia_mayor_ventas][0]} con $ {totales_diarios[dia_mayor_ventas][1]}")
