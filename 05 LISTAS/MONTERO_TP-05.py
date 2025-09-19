@@ -84,35 +84,55 @@
 # print(datos)
 # print(datos_unicos)
 
-# Ejercicio 5
+# # Ejercicio 5
 
-#Inicializamos las variables
-lista_alumnos = ["Joaquin", "Gabriel", "Pedro", "Sofia", "Celeste", "Federico", "Simon", "Lucas"]
+# #Inicializamos las variables
+# lista_alumnos = ["Joaquin", "Gabriel", "Pedro", "Sofia", "Celeste", "Federico", "Simon", "Lucas"]
 
-#Mostramos por pantalla el listado para corroborar el algoritmo
-print("Listado de alumnos:")
-print(lista_alumnos)
+# #Mostramos por pantalla el listado para corroborar el algoritmo
+# print("Listado de alumnos:")
+# print(lista_alumnos)
 
-#Consultamos al usuario si desea agregar o eliminar algun alumno y verificamos que elija una de las dos opciones
-while True:
-    opcion_usuario = input("Desea agregar o eliminar un alumno? A/E ")
+# #Consultamos al usuario si desea agregar o eliminar algun alumno y verificamos que elija una de las dos opciones
+# while True:
+#     opcion_usuario = input("Desea agregar o eliminar un alumno? A/E ")
 
-#Solicitamos el nombre del alumno a ingresar, lo agregamos a la lista y mostramos por pantalla
-    if opcion_usuario.lower() == "a":
-        alumno_seleccionado = input("Indique el nombre del alumno que desea ingresar: ")
-        lista_alumnos.append(alumno_seleccionado)
-        print("Alumno ingresado correctamente")
-        print(lista_alumnos)
-        break
-#Solicitamos el nombre del alumno a eliminar, si está lo eliminamos de la lista y mostramos por pantalla sino informamos
-    elif opcion_usuario.lower() == "e":
-        alumno_seleccionado = input("Indique el nombre del alumno que desea eliminar: ")
-        if alumno_seleccionado in lista_alumnos:
-            lista_alumnos.remove(alumno_seleccionado)
-            print("Alumno eliminado correctamente")
-            print(lista_alumnos)
-        else:
-            print("Alumno no encontrado")
-        break
-    else:
-        print("Opción incorrecta")
+# #Solicitamos el nombre del alumno a ingresar, lo agregamos a la lista y mostramos por pantalla
+#     if opcion_usuario.lower() == "a":
+#         alumno_seleccionado = input("Indique el nombre del alumno que desea ingresar: ")
+#         lista_alumnos.append(alumno_seleccionado)
+#         print("Alumno ingresado correctamente")
+#         print(lista_alumnos)
+#         break
+# #Solicitamos el nombre del alumno a eliminar, si está lo eliminamos de la lista y mostramos por pantalla sino informamos
+#     elif opcion_usuario.lower() == "e":
+#         alumno_seleccionado = input("Indique el nombre del alumno que desea eliminar: ")
+#         if alumno_seleccionado in lista_alumnos:
+#             lista_alumnos.remove(alumno_seleccionado)
+#             print("Alumno eliminado correctamente")
+#             print(lista_alumnos)
+#         else:
+#             print("Alumno no encontrado")
+#         break
+#     else:
+#         print("Opción incorrecta")
+
+# Ejercicio 6
+
+#Definimos las variables
+lista_elementos = [1, 2, 3, 4, 5, 6, 7]
+longitud_lista = len(lista_elementos)
+ultimo_elemento = lista_elementos[-1]
+
+#Mostramos por pantalla la lista
+print(lista_elementos)
+
+#Recorremos la lista en forma decreciente, cambiando el valor de cada elemento a su anterior
+for i in range(longitud_lista - 1, 0, -1):
+    lista_elementos[i] = lista_elementos[i-1]
+
+#Colocamos el último elemento de la lista al principio
+lista_elementos[0] = ultimo_elemento
+
+#Mostramos por pantalla el resultado
+print(lista_elementos)
