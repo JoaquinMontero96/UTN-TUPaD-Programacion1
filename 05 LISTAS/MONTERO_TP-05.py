@@ -69,17 +69,50 @@
 # #Mostramos la cantidad de elementos de cada lista
 # print(f"Hay {len(lista_pares)} números pares y {len(lista_impares)} números impares")
 
-# Ejercicio 4
+# # Ejercicio 4
 
-#Inicializamos la variables
-datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
-datos_unicos = []
+# #Inicializamos la variables
+# datos = [1, 3, 5, 3, 7, 1, 9, 5, 3]
+# datos_unicos = []
 
-#Recorremos la lista y agregamos cada elemento que no esté en la nueva lista
-for dato in datos:
-    if not dato in datos_unicos:
-        datos_unicos.append(dato)
+# #Recorremos la lista y agregamos cada elemento que no esté en la nueva lista
+# for dato in datos:
+#     if not dato in datos_unicos:
+#         datos_unicos.append(dato)
 
-#Mostramos ambas listas para corroborar el funcionamiento del algoritmo
-print(datos)
-print(datos_unicos)
+# #Mostramos ambas listas para corroborar el funcionamiento del algoritmo
+# print(datos)
+# print(datos_unicos)
+
+# Ejercicio 5
+
+#Inicializamos las variables
+lista_alumnos = ["Joaquin", "Gabriel", "Pedro", "Sofia", "Celeste", "Federico", "Simon", "Lucas"]
+
+#Mostramos por pantalla el listado para corroborar el algoritmo
+print("Listado de alumnos:")
+print(lista_alumnos)
+
+#Consultamos al usuario si desea agregar o eliminar algun alumno y verificamos que elija una de las dos opciones
+while True:
+    opcion_usuario = input("Desea agregar o eliminar un alumno? A/E ")
+
+#Solicitamos el nombre del alumno a ingresar, lo agregamos a la lista y mostramos por pantalla
+    if opcion_usuario.lower() == "a":
+        alumno_seleccionado = input("Indique el nombre del alumno que desea ingresar: ")
+        lista_alumnos.append(alumno_seleccionado)
+        print("Alumno ingresado correctamente")
+        print(lista_alumnos)
+        break
+#Solicitamos el nombre del alumno a eliminar, si está lo eliminamos de la lista y mostramos por pantalla sino informamos
+    elif opcion_usuario.lower() == "e":
+        alumno_seleccionado = input("Indique el nombre del alumno que desea eliminar: ")
+        if alumno_seleccionado in lista_alumnos:
+            lista_alumnos.remove(alumno_seleccionado)
+            print("Alumno eliminado correctamente")
+            print(lista_alumnos)
+        else:
+            print("Alumno no encontrado")
+        break
+    else:
+        print("Opción incorrecta")
