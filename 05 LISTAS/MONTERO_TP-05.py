@@ -160,27 +160,76 @@
 # print(f"El promedio de las máximas fue {promedio_maximas} y el promedio de las mínimas fue {promedio_minimas}")
 # print(f"El día de mas amplitud térmica fue el {dias[dia_maxima_amplitud]} con {maxima_amplitud_termica} grados de diferencia entre la mínima y la máxima")
 
-# Ejercicio 8
+# # Ejercicio 8
+
+# # Definimos las variables
+# matriz_notas = [[6, 8, 8], [7, 4, 10], [6, 7, 9], [9, 10, 9], [5, 7, 9]]
+# cantidad_alumnos = len(matriz_notas)
+# promedios_materias = [0, 0, 0]
+# cantidad_materias = len(promedios_materias)
+
+# # Recorremos cada alumno
+# for alumno in range(cantidad_alumnos):
+#     suma_notas = 0
+
+# # Recorremos cada nota del alumno
+#     for nota in range(cantidad_materias):
+#         suma_notas += matriz_notas[alumno][nota] # Sumamos sus calificaciones
+#         promedios_materias[nota] = promedios_materias[nota] + matriz_notas[alumno][nota] # Sumamos cada nota a la materia correspondiente
+
+#     promedio_alumno = round((suma_notas / cantidad_materias), 2) # Calculamos el promedio del alumno
+#     print(f"El promedio del alumno {alumno + 1} es {promedio_alumno}") # y lo mostramos por pantalla
+
+# # Recorremos cada materia
+# for i in range(cantidad_materias):
+#     promedios_materias[i] = promedios_materias[i] / cantidad_alumnos # Calculamos el promedio de cada materia
+#     print(f"El promedio de la materia {i + 1} es {promedios_materias[i]}") # y lo mostramos por pantalla
+
+# Ejercicio 9
 
 # Definimos las variables
-matriz_notas = [[6, 8, 8], [7, 4, 10], [6, 7, 9], [9, 10, 9], [5, 7, 9]]
-cantidad_alumnos = len(matriz_notas)
-promedios_materias = [0, 0, 0]
-cantidad_materias = len(promedios_materias)
+tablero = [[" ", 1, 2, 3], ["1", "-", "-", "-"], ["2", "-", "-","-"], ["3", "-", "-","-"]]
 
-# Recorremos cada alumno
-for alumno in range(cantidad_alumnos):
-    suma_notas = 0
+# Mostramos el tablero vacío
+for fila in tablero:
+    print(*fila)
 
-# Recorremos cada nota del alumno
-    for nota in range(cantidad_materias):
-        suma_notas += matriz_notas[alumno][nota] # Sumamos sus calificaciones
-        promedios_materias[nota] = promedios_materias[nota] + matriz_notas[alumno][nota] # Sumamos cada nota a la materia correspondiente
+# Iteramos 9 veces (cantidad de turnos posibles)
+for i in range(9):
+    # Definimos el ícono del jugador de turno
+    if i % 2 == 0:
+        team = "X"
+    else:
+        team = "O"
 
-    promedio_alumno = round((suma_notas / cantidad_materias), 2) # Calculamos el promedio del alumno
-    print(f"El promedio del alumno {alumno + 1} es {promedio_alumno}") # y lo mostramos por pantalla
+    # Anunciamos de quién es turno
+    print(f"Turno de {team}")
 
-# Recorremos cada materia
-for i in range(cantidad_materias):
-    promedios_materias[i] = promedios_materias[i] / cantidad_alumnos # Calculamos el promedio de cada materia
-    print(f"El promedio de la materia {i + 1} es {promedios_materias[i]}") # y lo mostramos por pantalla
+    # Solicitamos al usuario ingresar número de fila y columna, verificamos que sea dentro del rango permitido
+    while True:
+        while True:
+            fila_usuario = int(input("Ingrese n° de fila (1 a 3): "))
+            if fila_usuario < 1 or fila_usuario > 3:
+                print("Por favor ingrese del 1 al 3")
+            else:
+                break
+        while True:
+            columna_usuario = int(input("Ingrese n° de columna (1 a 3): "))
+            if columna_usuario < 1 or columna_usuario > 3:
+                print("Por favor ingrese del 1 al 3")
+            else:
+                break
+
+        # Verificamos que el casillero no esté ocupado
+        if tablero[fila_usuario][columna_usuario] != "-":
+            print("Casillero ya ocupado")
+        else:
+            tablero[fila_usuario][columna_usuario] = team # Asignamos el lugar ingresado
+            break
+
+    # Mostramos por pantalla como queda el tablero
+    for fila in tablero:
+        print(*fila)
+
+# Finalizamos la partida
+print("Partida finalizada")
