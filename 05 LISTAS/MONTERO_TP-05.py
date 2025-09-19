@@ -117,22 +117,45 @@
 #     else:
 #         print("Opción incorrecta")
 
-# Ejercicio 6
+# # Ejercicio 6
 
-#Definimos las variables
-lista_elementos = [1, 2, 3, 4, 5, 6, 7]
-longitud_lista = len(lista_elementos)
-ultimo_elemento = lista_elementos[-1]
+# #Definimos las variables
+# lista_elementos = [1, 2, 3, 4, 5, 6, 7]
+# longitud_lista = len(lista_elementos)
+# ultimo_elemento = lista_elementos[-1]
 
-#Mostramos por pantalla la lista
-print(lista_elementos)
+# #Mostramos por pantalla la lista
+# print(lista_elementos)
 
-#Recorremos la lista en forma decreciente, cambiando el valor de cada elemento a su anterior
-for i in range(longitud_lista - 1, 0, -1):
-    lista_elementos[i] = lista_elementos[i-1]
+# #Recorremos la lista en forma decreciente, cambiando el valor de cada elemento a su anterior
+# for i in range(longitud_lista - 1, 0, -1):
+#     lista_elementos[i] = lista_elementos[i-1]
 
-#Colocamos el último elemento de la lista al principio
-lista_elementos[0] = ultimo_elemento
+# #Colocamos el último elemento de la lista al principio
+# lista_elementos[0] = ultimo_elemento
 
-#Mostramos por pantalla el resultado
-print(lista_elementos)
+# #Mostramos por pantalla el resultado
+# print(lista_elementos)
+
+# Ejercicio 7
+lista = [[15, 33],[13, 24],[11, 28],[7, 20],[8, 24],[9, 26],[14, 29]]
+dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+suma_maximas = 0
+suma_minimas = 0
+dia_maxima_amplitud = 0
+maxima_amplitud_termica = 0
+
+for i in range(7):
+    suma_maximas += lista[i][1]
+    suma_minimas += lista[i][0]
+    amplitud_termica = lista[i][1] - lista[i][0]
+    if amplitud_termica > maxima_amplitud_termica:
+        maxima_amplitud_termica = amplitud_termica
+        dia_maxima_amplitud = i
+
+
+promedio_maximas = round((suma_maximas / 7), 2)
+promedio_minimas = round((suma_minimas / 7), 2)
+
+print(f"El promedio de las máximas fue {promedio_maximas} y el promedio de las mínimas fue {promedio_minimas}")
+print(f"El día de mas amplitud térmica fue el {dias[dia_maxima_amplitud]} con {maxima_amplitud_termica} grados de diferencia entre la mínima y la máxima")
