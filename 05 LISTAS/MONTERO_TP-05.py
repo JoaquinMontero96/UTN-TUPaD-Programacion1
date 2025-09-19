@@ -137,25 +137,50 @@
 # #Mostramos por pantalla el resultado
 # print(lista_elementos)
 
-# Ejercicio 7
-lista = [[15, 33],[13, 24],[11, 28],[7, 20],[8, 24],[9, 26],[14, 29]]
-dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
-suma_maximas = 0
-suma_minimas = 0
-dia_maxima_amplitud = 0
-maxima_amplitud_termica = 0
+# # Ejercicio 7
+# lista = [[15, 33],[13, 24],[11, 28],[7, 20],[8, 24],[9, 26],[14, 29]]
+# dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+# suma_maximas = 0
+# suma_minimas = 0
+# dia_maxima_amplitud = 0
+# maxima_amplitud_termica = 0
 
-for i in range(7):
-    suma_maximas += lista[i][1]
-    suma_minimas += lista[i][0]
-    amplitud_termica = lista[i][1] - lista[i][0]
-    if amplitud_termica > maxima_amplitud_termica:
-        maxima_amplitud_termica = amplitud_termica
-        dia_maxima_amplitud = i
+# for i in range(7):
+#     suma_maximas += lista[i][1]
+#     suma_minimas += lista[i][0]
+#     amplitud_termica = lista[i][1] - lista[i][0]
+#     if amplitud_termica > maxima_amplitud_termica:
+#         maxima_amplitud_termica = amplitud_termica
+#         dia_maxima_amplitud = i
 
 
-promedio_maximas = round((suma_maximas / 7), 2)
-promedio_minimas = round((suma_minimas / 7), 2)
+# promedio_maximas = round((suma_maximas / 7), 2)
+# promedio_minimas = round((suma_minimas / 7), 2)
 
-print(f"El promedio de las máximas fue {promedio_maximas} y el promedio de las mínimas fue {promedio_minimas}")
-print(f"El día de mas amplitud térmica fue el {dias[dia_maxima_amplitud]} con {maxima_amplitud_termica} grados de diferencia entre la mínima y la máxima")
+# print(f"El promedio de las máximas fue {promedio_maximas} y el promedio de las mínimas fue {promedio_minimas}")
+# print(f"El día de mas amplitud térmica fue el {dias[dia_maxima_amplitud]} con {maxima_amplitud_termica} grados de diferencia entre la mínima y la máxima")
+
+# Ejercicio 8
+
+# Definimos las variables
+matriz_notas = [[6, 8, 8], [7, 4, 10], [6, 7, 9], [9, 10, 9], [5, 7, 9]]
+cantidad_alumnos = len(matriz_notas)
+promedios_materias = [0, 0, 0]
+cantidad_materias = len(promedios_materias)
+
+# Recorremos cada alumno
+for alumno in range(cantidad_alumnos):
+    suma_notas = 0
+
+# Recorremos cada nota del alumno
+    for nota in range(cantidad_materias):
+        suma_notas += matriz_notas[alumno][nota] # Sumamos sus calificaciones
+        promedios_materias[nota] = promedios_materias[nota] + matriz_notas[alumno][nota] # Sumamos cada nota a la materia correspondiente
+
+    promedio_alumno = round((suma_notas / cantidad_materias), 2) # Calculamos el promedio del alumno
+    print(f"El promedio del alumno {alumno + 1} es {promedio_alumno}") # y lo mostramos por pantalla
+
+# Recorremos cada materia
+for i in range(cantidad_materias):
+    promedios_materias[i] = promedios_materias[i] / cantidad_alumnos # Calculamos el promedio de cada materia
+    print(f"El promedio de la materia {i + 1} es {promedios_materias[i]}") # y lo mostramos por pantalla
