@@ -52,16 +52,26 @@
 # num = int(input("Ingrese un número entero para conocer su tabla de multiplicación: "))
 # tabla_multiplicar(num)
 
-# Ejercicio 7
-def operaciones_basicas(a, b):
-    resultados = (a + b, a - b, a * b, a / b)
-    return resultados
+# # Ejercicio 7
+# def operaciones_basicas(a, b):
+#     resultados = (a + b, a - b, a * b, a / b)
+#     return resultados
 
-num1 = 7
-num2 = 5
-resultados = operaciones_basicas(num1, num2)
+# num1 = 7
+# num2 = 5
+# resultados = operaciones_basicas(num1, num2)
 
-print(f"{num1} + {num2} = {resultados[0]}")
-print(f"{num1} - {num2} = {resultados[1]}")
-print(f"{num1} * {num2} = {resultados[2]}")
-print(f"{num1} / {num2} = {resultados[3]}")
+# print(f"{num1} + {num2} = {resultados[0]}")
+# print(f"{num1} - {num2} = {resultados[1]}")
+# print(f"{num1} * {num2} = {resultados[2]}")
+# print(f"{num1} / {num2} = {resultados[3]}")
+
+# Ejercicio 8
+def calcular_imc(peso, altura):
+    return round((peso / (altura / 100) ** 2), 2)
+
+peso = float(input("Ingrese su peso expresado en kg: "))
+altura = float(input("Ingrese su altura expresada en cm: "))
+imc = calcular_imc(peso, altura)
+
+print(f"Su índice de masa corporal es {imc}")
