@@ -37,9 +37,16 @@
 
 # print(f"El área del círculo es {area} y el perímetro {perimetro}")
 
-# Ejercicio 5
-def segundos_a_horas(segundos):
-    return round(segundos/60/60, 2)
+# # Ejercicio 5
+# def segundos_a_horas(segundos):
+#     return round(segundos/60/60, 2)
 
-segundos = int(input("Cuantos segundos desea calcular en horas? "))
-print(f"{segundos} segundos equivalen a {segundos_a_horas(segundos)} horas")
+# segundos = int(input("Cuantos segundos desea calcular en horas? "))
+# print(f"{segundos} segundos equivalen a {segundos_a_horas(segundos)} horas")
+
+def tabla_multiplicar(numero):
+    for i in range(1, 11):
+        print(f"{numero} x {i} = {numero * i}")
+
+num = int(input("Ingrese un número entero para conocer su tabla de multiplicación: "))
+tabla_multiplicar(num)
