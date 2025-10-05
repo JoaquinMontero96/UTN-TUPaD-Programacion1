@@ -44,9 +44,24 @@
 # segundos = int(input("Cuantos segundos desea calcular en horas? "))
 # print(f"{segundos} segundos equivalen a {segundos_a_horas(segundos)} horas")
 
-def tabla_multiplicar(numero):
-    for i in range(1, 11):
-        print(f"{numero} x {i} = {numero * i}")
+# # Ejercicio 6
+# def tabla_multiplicar(numero):
+#     for i in range(1, 11):
+#         print(f"{numero} x {i} = {numero * i}")
 
-num = int(input("Ingrese un número entero para conocer su tabla de multiplicación: "))
-tabla_multiplicar(num)
+# num = int(input("Ingrese un número entero para conocer su tabla de multiplicación: "))
+# tabla_multiplicar(num)
+
+# Ejercicio 7
+def operaciones_basicas(a, b):
+    resultados = (a + b, a - b, a * b, a / b)
+    return resultados
+
+num1 = 7
+num2 = 5
+resultados = operaciones_basicas(num1, num2)
+
+print(f"{num1} + {num2} = {resultados[0]}")
+print(f"{num1} - {num2} = {resultados[1]}")
+print(f"{num1} * {num2} = {resultados[2]}")
+print(f"{num1} / {num2} = {resultados[3]}")
