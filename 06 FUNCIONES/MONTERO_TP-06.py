@@ -66,12 +66,21 @@
 # print(f"{num1} * {num2} = {resultados[2]}")
 # print(f"{num1} / {num2} = {resultados[3]}")
 
-# Ejercicio 8
-def calcular_imc(peso, altura):
-    return round((peso / (altura / 100) ** 2), 2)
+# # Ejercicio 8
+# def calcular_imc(peso, altura):
+#     return round((peso / (altura / 100) ** 2), 2)
 
-peso = float(input("Ingrese su peso expresado en kg: "))
-altura = float(input("Ingrese su altura expresada en cm: "))
-imc = calcular_imc(peso, altura)
+# peso = float(input("Ingrese su peso expresado en kg: "))
+# altura = float(input("Ingrese su altura expresada en cm: "))
+# imc = calcular_imc(peso, altura)
 
-print(f"Su índice de masa corporal es {imc}")
+# print(f"Su índice de masa corporal es {imc}")
+
+# Ejercicio 9
+def celcius_a_farenheit(temp):
+    return temp * 1.8 + 32
+
+temperatura_celsius = float(input("Ingrese una temperatura en grados celsius: "))
+temperatura_farenheit = celcius_a_farenheit(temperatura_celsius)
+
+print(f"{temperatura_celsius}°C es equivalente a {temperatura_farenheit}°F")
