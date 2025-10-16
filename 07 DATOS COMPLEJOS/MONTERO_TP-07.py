@@ -33,13 +33,31 @@
 # if nombre_consulta in lista_contactos:
 #     print(lista_contactos[nombre_consulta])
 
-#Ejercicio 5
-from collections import Counter
+# #Ejercicio 5
+# from collections import Counter
 
-frase = input("Ingrese una frase: ")
-listado_palabras = frase.split()
-palabras = set(listado_palabras)
-cantidad_palabras = dict(Counter(listado_palabras))
+# frase = input("Ingrese una frase: ")
+# listado_palabras = frase.split()
+# palabras = set(listado_palabras)
+# cantidad_palabras = dict(Counter(listado_palabras))
 
-print(palabras)
-print(cantidad_palabras)
+# print(palabras)
+# print(cantidad_palabras)
+
+# Ejercicio 6
+
+alumnos = {}
+
+for alumno in range(3):
+    nombre_alumno = input("Ingrese el nombre del alumno: ")
+    notas_alumno = []
+    for nota in range(3):
+        nota = int(input(f"Ingrese la nota {nota + 1}: "))
+        notas_alumno.append(nota)
+    alumnos[nombre_alumno] = tuple(notas_alumno)
+
+print(alumnos)
+
+for alumno, notas in alumnos.items():
+    promedio = round(sum(notas)/len(notas), 2)
+    print(f"El promedio de {alumno} es {promedio}")
