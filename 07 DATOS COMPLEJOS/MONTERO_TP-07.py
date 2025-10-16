@@ -46,18 +46,30 @@
 
 # Ejercicio 6
 
-alumnos = {}
+# alumnos = {}
 
-for alumno in range(3):
-    nombre_alumno = input("Ingrese el nombre del alumno: ")
-    notas_alumno = []
-    for nota in range(3):
-        nota = int(input(f"Ingrese la nota {nota + 1}: "))
-        notas_alumno.append(nota)
-    alumnos[nombre_alumno] = tuple(notas_alumno)
+# for alumno in range(3):
+#     nombre_alumno = input("Ingrese el nombre del alumno: ")
+#     notas_alumno = []
+#     for nota in range(3):
+#         nota = int(input(f"Ingrese la nota {nota + 1}: "))
+#         notas_alumno.append(nota)
+#     alumnos[nombre_alumno] = tuple(notas_alumno)
 
-print(alumnos)
+# print(alumnos)
 
-for alumno, notas in alumnos.items():
-    promedio = round(sum(notas)/len(notas), 2)
-    print(f"El promedio de {alumno} es {promedio}")
+# for alumno, notas in alumnos.items():
+#     promedio = round(sum(notas)/len(notas), 2)
+#     print(f"El promedio de {alumno} es {promedio}")
+
+# Ejercicio 7
+
+primer_parcial = {1, 2, 4, 9, 14, 15, 16, 18, 20}
+segundo_parcial = {1, 3, 4, 5, 6, 8, 11, 14, 15, 16, 17, 18, 19}
+
+interseccion = primer_parcial & segundo_parcial
+diferencia_simetrica = primer_parcial ^ segundo_parcial
+union = primer_parcial | segundo_parcial
+print(f"Lista de alumnos que aprobaron ambos parciales: {interseccion}")
+print(f"Lista de alumnos que aprobaron solo un parcial: {diferencia_simetrica}")
+print(f"Lista de alumnos que aprobaron al menos un parcial: {union}")
