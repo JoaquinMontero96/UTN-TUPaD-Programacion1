@@ -17,3 +17,18 @@ print(precios_frutas)
 lista_frutas = list(precios_frutas.keys())
 
 print(lista_frutas)
+
+# Ejercicio 4
+lista_contactos = {}
+
+for i in range(5):
+    nombre = input("Ingrese nombre del contacto: ")
+    num = int(input("Ingrese número de contacto: "))
+
+    lista_contactos[nombre] = num
+
+print(lista_contactos)
+
+nombre_consulta = input("Ingrese nombre a consultar: ")
+if nombre_consulta in lista_contactos:
+    print(lista_contactos[nombre_consulta])
