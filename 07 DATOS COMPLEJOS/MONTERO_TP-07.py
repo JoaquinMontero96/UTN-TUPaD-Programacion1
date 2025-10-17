@@ -154,10 +154,13 @@ agenda = {
 
 while True:
     print("-----------CONSULTA DE AGENDA------------")
-    dia = input("Ingrese el día de la semana a consultar (ej: lunes): ").lower()
-    horario = input("Ingrese horario a consultar (ej: 10:00): ")
-    consultar_agenda(dia, horario)
-    time.sleep(2)
+    dia = input("Ingrese el día de la semana a consultar (ej: lunes) o escribe x para salir: ").lower()
+    if dia == "x":
+        break
+    else:
+        horario = input("Ingrese horario a consultar (ej: 10:00): ")
+        consultar_agenda(dia, horario)
+        time.sleep(2)
 
 # Ejercicio 10
 
