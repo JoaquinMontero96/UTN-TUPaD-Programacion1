@@ -74,60 +74,87 @@
 # print(f"Lista de alumnos que aprobaron solo un parcial: {diferencia_simetrica}")
 # print(f"Lista de alumnos que aprobaron al menos un parcial: {union}")
 
-# Ejercicio 8
+# # Ejercicio 8
+# import time
+
+# def consultar_stock(articulo):
+#     if articulo in stock:
+#         print(f"El stock de {articulo} es {stock[articulo]}")
+#     else:
+#         print(f"{articulo} no está cargado en el inventario")
+
+# def actualizar_stock(articulo):
+#     if articulo in stock:
+#         cantidad_actualizar = int(input("Ingrese cantidad a ingresar (en negativo para restar): "))
+#         stock[articulo] += cantidad_actualizar
+#         print("Stock actualizado con éxito")
+#     else:
+#         print(f"{articulo} no está cargado en el inventario")
+
+# def agregar_articulo(articulo):
+#     if articulo in stock:
+#         print(f"{articulo} ya se encuentra cargado en el inventario")
+#     else:
+#         stock_inicial = int(input("Ingrese el stock inicial: "))
+#         stock[articulo] = stock_inicial
+#         print(f"{articulo} fue ingresado con éxito")
+
+# stock = {
+#     "Tenedor": 120,
+#     "Cuchillo": 100,
+#     "Cuchara": 90,
+#     "Vaso": 200,
+#     "Taza": 120
+# }
+
+# while True:
+#     print("-----------------------")
+#     print("Ingrese una opción:")
+#     print("CONSULTAR STOCK - 1")
+#     print("ACTUALIZAR STOCK - 2")
+#     print("AGREGAR ARTÍCULO - 3")
+#     print("SALIR - 0")
+#     print("-----------------------")
+#     opcion_usuario = int(input())
+#     match opcion_usuario:
+#         case 0:
+#             break
+#         case 1:
+#             articulo = input("Ingrese el nombre del artículo a consultar: ")
+#             consultar_stock(articulo)
+#         case 2:
+#             articulo = input("Ingrese el nombre del artículo a actualizar: ")
+#             actualizar_stock(articulo)
+#         case 3:
+#             articulo = input("Ingrese el nombre del artículo que desea agregar al inventario: ")
+#             agregar_articulo(articulo)
+#         case _:
+#             print("Opción inválida")
+#     time.sleep(1)
+
+# Ejercicio 9
 import time
 
-def consultar_stock(articulo):
-    if articulo in stock:
-        print(f"El stock de {articulo} es {stock[articulo]}")
+def consultar_agenda(dia, horario):
+    evento = agenda.get((dia, horario))
+    if evento:
+        print(f"El {dia} a las {horario} tienes {evento}")
     else:
-        print(f"{articulo} no está cargado en el inventario")
+        print(f"El {dia} a las {horario} no tienes eventos agendados.")
 
-def actualizar_stock(articulo):
-    if articulo in stock:
-        cantidad_actualizar = int(input("Ingrese cantidad a ingresar (en negativo para restar): "))
-        stock[articulo] += cantidad_actualizar
-        print("Stock actualizado con éxito")
-    else:
-        print(f"{articulo} no está cargado en el inventario")
-
-def agregar_articulo(articulo):
-    if articulo in stock:
-        print(f"{articulo} ya se encuentra cargado en el inventario")
-    else:
-        stock_inicial = int(input("Ingrese el stock inicial: "))
-        stock[articulo] = stock_inicial
-        print(f"{articulo} fue ingresado con éxito")
-
-stock = {
-    "Tenedor": 120,
-    "Cuchillo": 100,
-    "Cuchara": 90,
-    "Vaso": 200,
-    "Taza": 120
+agenda = {
+    ("lunes", "09:00"): "Meet con estudio contable",
+    ("lunes", "11:00"): "Capacitación de gestión de la calidad",
+    ("martes", "10:00"): "Reunión con gerente de Banco Galicia",
+    ("martes", "12:00"): "Reunión con gerente de Banco Santander",
+    ("miercoles", "09:00"): "Reunión con gerente de Banco Supervielle",
+    ("miercoles", "11:00"): "Capacitación de gestión de la calidad",
+    ("miercoles", "13:00"): "Meet con estudio contable",
 }
 
 while True:
-    print("-----------------------")
-    print("Ingrese una opción:")
-    print("CONSULTAR STOCK - 1")
-    print("ACTUALIZAR STOCK - 2")
-    print("AGREGAR ARTÍCULO - 3")
-    print("SALIR - 0")
-    print("-----------------------")
-    opcion_usuario = int(input())
-    match opcion_usuario:
-        case 0:
-            break
-        case 1:
-            articulo = input("Ingrese el nombre del artículo a consultar: ")
-            consultar_stock(articulo)
-        case 2:
-            articulo = input("Ingrese el nombre del artículo a actualizar: ")
-            actualizar_stock(articulo)
-        case 3:
-            articulo = input("Ingrese el nombre del artículo que desea agregar al inventario: ")
-            agregar_articulo(articulo)
-        case _:
-            print("Opción inválida")
-    time.sleep(1)
+    print("-----------CONSULTA DE AGENDA------------")
+    dia = input("Ingrese el día de la semana a consultar (ej: lunes): ").lower()
+    horario = input("Ingrese horario a consultar (ej: 10:00): ")
+    consultar_agenda(dia, horario)
+    time.sleep(2)
