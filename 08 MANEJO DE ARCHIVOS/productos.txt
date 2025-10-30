@@ -1,0 +1,3 @@
+camiseta,35000,12
+short,24000,15
+campera,68000,6
