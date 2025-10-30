@@ -29,3 +29,7 @@ for producto in lista:
         break
 if not producto_existe:
     print("El producto no se encontró")
+
+with open("08 MANEJO DE ARCHIVOS/productos.txt", "w") as archivo:
+    for producto in lista:
+        archivo.write(f"{producto["nombre"]},{producto["precio"]},{producto["cantidad"]}\n")
