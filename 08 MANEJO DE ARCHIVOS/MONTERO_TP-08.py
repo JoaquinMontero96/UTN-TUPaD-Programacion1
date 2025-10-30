@@ -18,3 +18,14 @@ with open("08 MANEJO DE ARCHIVOS/productos.txt", "r") as archivo:
             "precio" :  datos[1],
             "cantidad" :  datos[2]
         })
+
+nombre_buscar = input("Ingrese producto a buscar: ").lower()
+producto_existe = False
+
+for producto in lista:
+    if producto["nombre"] == nombre_buscar:
+        producto_existe = True
+        print(f"Nombre: {producto["nombre"]} | Precio: {producto["precio"]} | Cantidad: {producto["cantidad"]}")
+        break
+if not producto_existe:
+    print("El producto no se encontró")
