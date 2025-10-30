@@ -8,3 +8,13 @@ with open("08 MANEJO DE ARCHIVOS/productos.txt", "a") as archivo:
     precio = float(input("Ingrese su precio: "))
     stock = int(input("Ingrese la cantidad: "))
     archivo.write(f"\n{producto},{precio},{stock}\n")
+
+with open("08 MANEJO DE ARCHIVOS/productos.txt", "r") as archivo:
+    lista = []
+    for linea in archivo:
+        datos = linea.strip().split(",")
+        lista.append({
+            "nombre" :  datos[0],
+            "precio" :  datos[1],
+            "cantidad" :  datos[2]
+        })
