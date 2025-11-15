@@ -57,24 +57,42 @@
 
 # probar_potencia()
 
-# Ejercicio 4
-def entero_a_binario(n):
-    if n == 0:
-        return ''
+# # Ejercicio 4
+# def entero_a_binario(n):
+#     if n == 0:
+#         return ''
+#     else:
+#         return entero_a_binario(n // 2) + str(n % 2)
+
+# def probar_entero_a_binario():
+#     try:
+#         num = int(input('Ingrese un número entero no negativo: '))
+#     except:
+#         print('Número inválido')
+#         return
+#     if num < 0:
+#         print('El número debe ser no negativo')
+#         return
+#     binario = entero_a_binario(num)
+#     binario = binario if binario != '' else '0'
+#     print(f'El número {num} en binario es: {binario}')
+
+# probar_entero_a_binario()
+
+# Ejercicio 5
+def es_palindromo(palabra):
+    palabra = palabra.replace(' ', '').lower()
+    if len(palabra) <= 1:
+        return True
+    if palabra[0] != palabra[-1]:
+        return False
+    return es_palindromo(palabra[1:-1])
+
+def probar_es_palindromo():
+    palabra = input('Ingrese una palabra o frase: ')
+    if es_palindromo(palabra):
+        print(f'"{palabra}" es un palíndromo.')
     else:
-        return entero_a_binario(n // 2) + str(n % 2)
+        print(f'"{palabra}" no es un palíndromo.')
 
-def probar_entero_a_binario():
-    try:
-        num = int(input('Ingrese un número entero no negativo: '))
-    except:
-        print('Número inválido')
-        return
-    if num < 0:
-        print('El número debe ser no negativo')
-        return
-    binario = entero_a_binario(num)
-    binario = binario if binario != '' else '0'
-    print(f'El número {num} en binario es: {binario}')
-
-probar_entero_a_binario()
+probar_es_palindromo()
