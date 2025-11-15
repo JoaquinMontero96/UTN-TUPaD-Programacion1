@@ -119,22 +119,45 @@
 # probar_suma_digitos()
 
 # # Ejercicio 7
-def contar_bloques(n):
-    if n == 1:
-        return 1
+# def contar_bloques(n):
+#     if n == 1:
+#         return 1
+#     else:
+#         return n + contar_bloques(n - 1)
+
+# def probar_contar_bloques():
+#     try:
+#         num = int(input('Ingrese el número de bloques en la base (entero mayor a 0): '))
+#     except:
+#         print('Número inválido')
+#         return
+#     if num <= 0:
+#         print('El número debe ser mayor a 0')
+#         return
+#     total_bloques = contar_bloques(num)
+#     print(f'El número total de bloques necesarios para una pirámide con base de {num} bloques es: {total_bloques}')
+
+# probar_contar_bloques()
+
+# Ejercicio 8
+def contar_digito(num, digito):
+    if num == 0:
+        return 0
     else:
-        return n + contar_bloques(n - 1)
-
-def probar_contar_bloques():
+        cuenta = 1 if num % 10 == digito else 0
+        return cuenta + contar_digito(num // 10, digito)
+    
+def probar_contar_digito():
     try:
-        num = int(input('Ingrese el número de bloques en la base (entero mayor a 0): '))
+        numero = int(input('Ingrese un número entero no negativo: '))
+        digito = int(input('Ingrese un dígito (0-9) a contar: '))
     except:
-        print('Número inválido')
+        print('Entrada inválida')
         return
-    if num <= 0:
-        print('El número debe ser mayor a 0')
+    if numero < 0 or digito < 0 or digito > 9:
+        print('El número debe ser no negativo y el dígito debe estar entre 0 y 9')
         return
-    total_bloques = contar_bloques(num)
-    print(f'El número total de bloques necesarios para una pirámide con base de {num} bloques es: {total_bloques}')
+    cantidad = contar_digito(numero, digito)
+    print(f'El dígito {digito} aparece {cantidad} veces en el número {numero}.')
 
-probar_contar_bloques()
+probar_contar_digito()
