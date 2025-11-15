@@ -97,23 +97,44 @@
 
 # probar_es_palindromo()
 
-# # Ejercicio 6
-def suma_digitos(n):
-    if n == 0:
-        return 0
-    else:
-        return n % 10 + suma_digitos(n // 10)
+# # # Ejercicio 6
+# def suma_digitos(n):
+#     if n == 0:
+#         return 0
+#     else:
+#         return n % 10 + suma_digitos(n // 10)
 
-def probar_suma_digitos():
+# def probar_suma_digitos():
+#     try:
+#         num = int(input('Ingrese un número entero no negativo: '))
+#     except:
+#         print('Número inválido')
+#         return
+#     if num < 0:
+#         print('El número debe ser no negativo')
+#         return
+#     resultado = suma_digitos(num)
+#     print(f'La suma de los dígitos de {num} es: {resultado}')
+
+# probar_suma_digitos()
+
+# # Ejercicio 7
+def contar_bloques(n):
+    if n == 1:
+        return 1
+    else:
+        return n + contar_bloques(n - 1)
+
+def probar_contar_bloques():
     try:
-        num = int(input('Ingrese un número entero no negativo: '))
+        num = int(input('Ingrese el número de bloques en la base (entero mayor a 0): '))
     except:
         print('Número inválido')
         return
-    if num < 0:
-        print('El número debe ser no negativo')
+    if num <= 0:
+        print('El número debe ser mayor a 0')
         return
-    resultado = suma_digitos(num)
-    print(f'La suma de los dígitos de {num} es: {resultado}')
+    total_bloques = contar_bloques(num)
+    print(f'El número total de bloques necesarios para una pirámide con base de {num} bloques es: {total_bloques}')
 
-probar_suma_digitos()
+probar_contar_bloques()
