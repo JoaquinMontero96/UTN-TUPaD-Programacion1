@@ -35,24 +35,46 @@
 
 # mostrar_fibonacci()
 
-# Ejercicio 3
-def potencia_rec(base, exponente):
-    if exponente == 0:
-        return 1
-    if exponente > 0:
-        return base * potencia_rec(base, exponente - 1)
+# # Ejercicio 3
+# def potencia_rec(base, exponente):
+#     if exponente == 0:
+#         return 1
+#     if exponente > 0:
+#         return base * potencia_rec(base, exponente - 1)
 
-def probar_potencia():
+# def probar_potencia():
+#     try:
+#         base = float(input('Ingrese la base: '))
+#         exponente = int(input('Ingrese el exponente (entero): '))
+#     except:
+#         print('Entrada inválida')
+#         return
+#     if exponente < 0:
+#         print('El exponente debe ser un entero no negativo')
+#         return
+#     resultado = potencia_rec(base, exponente)
+#     print(f'{base} elevado a {exponente} = {resultado}')
+
+# probar_potencia()
+
+# Ejercicio 4
+def entero_a_binario(n):
+    if n == 0:
+        return ''
+    else:
+        return entero_a_binario(n // 2) + str(n % 2)
+
+def probar_entero_a_binario():
     try:
-        base = float(input('Ingrese la base: '))
-        exponente = int(input('Ingrese el exponente (entero): '))
+        num = int(input('Ingrese un número entero no negativo: '))
     except:
-        print('Entrada inválida')
+        print('Número inválido')
         return
-    if exponente < 0:
-        print('El exponente debe ser un entero no negativo')
+    if num < 0:
+        print('El número debe ser no negativo')
         return
-    resultado = potencia_rec(base, exponente)
-    print(f'{base} elevado a {exponente} = {resultado}')
+    binario = entero_a_binario(num)
+    binario = binario if binario != '' else '0'
+    print(f'El número {num} en binario es: {binario}')
 
-probar_potencia()
+probar_entero_a_binario()
